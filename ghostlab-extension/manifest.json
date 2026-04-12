@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Ghost-lab Privacy Firewall",
+    "version": "1.0",
+    "description": "Replaces sensitive data with fake data in real-time to protect user privacy.",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+    "http://127.0.0.1:8000/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://chatgpt.com/*", "<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
